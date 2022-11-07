@@ -1,5 +1,7 @@
 # Lightning Lab 1
 
+[Take me to the lab](https://kodekloud.com/topic/lightning-lab-1/)
+
 1.  <details>
     <summary>Create Persistent Volume and bind it</summary>
     Create a Persistent Volume called `log-volume`. It should make use of a storage class name `manual`. It should use RWX as the access mode and have a size of 1Gi. The volume should use the hostPath `/opt/volume/nginx`

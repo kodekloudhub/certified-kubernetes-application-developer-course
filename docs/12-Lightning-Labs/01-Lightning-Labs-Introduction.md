@@ -4,7 +4,7 @@ Welcome to the KodeKloud CKAD Lightning Labs!
 
 This section has been created to give you hands-on practice in solving relatively complex questions in a short period of time.
 
-This environment is valid for 60 minutes, challenge yourself and try to complete all 5-6 questions within 30 minutes.
+This environment is valid for 60 minutes, challenge yourself and try to complete all 5 questions within 30 minutes.
 
 You can toggle between the questions but make sure that you click on END EXAM before the timer runs out. To pass, you need to secure 80%.
 
