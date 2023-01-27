@@ -159,7 +159,7 @@
 1.  <details>
     <summary>Build a new smaller docker image by modifying the same Dockerfile and name it webapp-color and tag it lite.</summary>
 
-    Know that really small images are usually based on Alpine linux. Let's look for it on [DockerHub](https://hub.docker.com). Note that in the exam you will not have access to DockerHub, but you can normally guess the tag you need to find an Alpine version of a particular container (refer back to question 3 anmd note that the alpine version of `nginx` is by far the smallest. Note also its tag.)
+    Know that really small images are usually based on Alpine linux. Let's look for it on [DockerHub](https://hub.docker.com). Note that in the exam you will not have access to DockerHub, but you can normally guess the tag you need to find an Alpine version of a particular container (refer back to question 3 and note that the alpine version of `nginx` is by far the smallest. Note also its tag.)
 
     1.  In the search bar in DockerHub, enter `python`
     1.  From the results, select `python - DOCKER OFFICIAL IMAGE`. Should be the first result.
@@ -188,7 +188,7 @@
 
         Now we see both our `webapp-color` images. Note the huge difference in size! When building images, whenever possible your base image should be an Alpine distro. The smalller a container is, the faster it loads. Additionally, you use less resources in your Kubernetes cluster which equates to cost savings. Alpine images are also more secure as there is barely anything installed on them other than what is required to run the operating system.
 
-    <details>
+    </details>
 
 1.  <details>Run an instance of the new image webapp-color:lite and publish port 8080 on the container to 8383 on the host.
     <summary>Run an instance of the new image webapp-color:lite and publish port 8080 on the container to 8383 on the host.</summary>
