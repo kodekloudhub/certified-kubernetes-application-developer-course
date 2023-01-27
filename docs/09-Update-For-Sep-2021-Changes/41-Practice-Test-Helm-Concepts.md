@@ -5,7 +5,7 @@
 1.  <details>
     <summary>Which command is used to search for a wordpress helm chart package from the Artifact Hub?</summary>
 
-    Run helm search hub chart-name command to search specific charts on Artifact Hub.
+    Run `helm search hub` command to search specific charts on Artifact Hub.
 
     ```bash
     helm search hub wordpress
@@ -16,7 +16,7 @@
 1.  <details>
     <summary>Add a bitnami helm chart repository in the controlplane node.<br/>name - bitnami</summary>
 
-    Use `helm repo add` to add a named repository
+    Use `helm repo add` to add a named repository to your local repository cache.
 
     ```bash
     helm repo add bitnami https://charts.bitnami.com/bitnami
@@ -162,6 +162,6 @@
 1.  <details>
     <summary>You can access the Apache default page by clicking on mywebapp link from the top of the terminal.</summary>
 
-    It should resond with `It works!`
+    It should respond with `It works!`
 
     </summary>
