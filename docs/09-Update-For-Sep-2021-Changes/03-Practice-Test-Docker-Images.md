@@ -159,7 +159,7 @@
 1.  <details>
     <summary>Build a new smaller docker image by modifying the same Dockerfile and name it webapp-color and tag it lite.</summary>
 
-    Know that really small images are usually based on Alpine linux. Let's look for it on [DockerHub](https://hub.docker.com). Note that in the exam you will not have access to DockerHub, but you can normally guess the tag you need to find an Alpine version of a particular container (refer back to question 3)
+    Know that really small images are usually based on Alpine linux. Let's look for it on [DockerHub](https://hub.docker.com). Note that in the exam you will not have access to DockerHub, but you can normally guess the tag you need to find an Alpine version of a particular container (refer back to question 3 anmd note that the alpine version of `nginx` is by far the smallest.)
 
     1.  In the search bar in DockerHub, enter `python`
     1.  From the results, select `python - DOCKER OFFICIAL IMAGE`. Should be the first result.
