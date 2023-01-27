@@ -144,7 +144,9 @@
 
         ```
 
-        Set the value for `http` to `30080`
+        Set the value for `http` to `30080`.
+
+        For correctness we should also set `service.type` from `LoadBalancer` to `NodePort`, however it will work without this.
 
     </details>
 
