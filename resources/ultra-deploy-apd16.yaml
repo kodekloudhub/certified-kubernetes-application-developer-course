@@ -26,6 +26,6 @@ spec:
       - command:
         - sleep
         - infinite
-        image: busybox:1.28
+        image: busybox
         name: ultra-apd-container
 
