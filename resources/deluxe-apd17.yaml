@@ -1,0 +1,29 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: app-lox12387
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: app-lox12387
+  labels:
+    app: deluxe-apd
+  name: deluxe-apd
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: deluxe-apd
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: deluxe-apd
+    spec:
+      containers:
+      - image: nginx:1.23
+        name: nginx-deluxe-apd
+        
