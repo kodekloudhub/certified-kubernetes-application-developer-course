@@ -1,0 +1,31 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: ultra-apd
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: ultra-apd
+  labels:
+    app: ultra-deploy-apd
+  name: ultra-deploy-apd
+spec:
+  replicas: 8
+  selector:
+    matchLabels:
+      app: ultra-deploy-apd
+  template:
+    metadata:
+      labels:
+        app: ultra-deploy-apd
+    spec:
+      containers:
+      - command:
+        - sleep
+        - infinite
+        image: busybox:1.28
+        name: ultra-apd-container
+
