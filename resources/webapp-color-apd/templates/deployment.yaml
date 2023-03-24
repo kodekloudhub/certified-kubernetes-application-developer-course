@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Deployment
+metadata:
+  labels:
+    app: webapp-color-apd
+  name: {{ .Values.name }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: webapp-color-apd
+  template:
+    metadata:
+      labels:
+        app: webapp-color-apd
+    spec:
+      containers:
+      - image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        name: webapp-color-apd
+        envFrom:
+         - configMapRef:
+                name: {{ .Values.configMap.name }}
