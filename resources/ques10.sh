@@ -29,3 +29,5 @@ while true; do
 done
 
 echo "All commands executed successfully."
+
+rm -rf /tmp/.ques10
