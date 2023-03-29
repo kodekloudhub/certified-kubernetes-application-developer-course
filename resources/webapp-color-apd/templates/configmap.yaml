@@ -1,0 +1,7 @@
+apiVersion: v1
+metadata:
+  name: {{ .Values.configMap.name }}
+kind: ConfigMap
+data:
+  APP_COLOR: darkblue
+

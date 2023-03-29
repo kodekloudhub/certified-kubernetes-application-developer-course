@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    version: v1-cds
+  name: {{ .Values.name }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      version: v1-cds
+  template:
+    metadata:
+      labels:
+        version: v1-cds
+    spec:
+      containers:
+      - image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        name: webpage-server-01
+        envFrom:
+         - configMapRef:
+                name: {{ .Values.configMap.name }}
