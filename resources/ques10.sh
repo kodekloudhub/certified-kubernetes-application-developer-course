@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd /tmp/.ques10
+cd /tmp/.ques10/resources/
 
 # Define the commands to be executed
 command1="helm install security-alpha-apd --namespace=security-alpha-01 ./security-alpha-apd"
