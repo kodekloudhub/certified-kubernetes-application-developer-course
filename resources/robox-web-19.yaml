@@ -1,0 +1,36 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: fusion-apd-x1df5
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    global-kgh: robox-west-apd
+  name: robox-west-apd
+  namespace: fusion-apd-x1df5
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      global-kgh: robox-west-apd
+  template:
+    metadata:
+      labels:
+        global-kgh: robox-west-apd
+    spec:
+      containers:
+        - image: nginx
+          name: robox-container
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: galaxy-apd-xb12
+  namespace: fusion-apd-x1df5
+
+
+
+
