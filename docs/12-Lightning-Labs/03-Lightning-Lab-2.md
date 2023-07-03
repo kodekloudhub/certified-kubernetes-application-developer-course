@@ -42,13 +42,13 @@
         While you have the file open in `vi`, add this in to the container spec.
 
         ```yaml
-          livenessProbe:
-            exec:
-              command:
-              - ls
-              - /var/www/html/file_check
-            initialDelaySeconds: 10
-            periodSeconds: 60
+            livenessProbe:
+              exec:
+                command:
+                - ls
+                - /var/www/html/file_check
+              initialDelaySeconds: 10
+              periodSeconds: 60
         ```
 
     1. Recreate the pod
@@ -124,10 +124,10 @@
         * Beneath `spec:`
 
             ```yaml
-            volumes:
-            - name: secret-volume
+              volumes:
+              - name: secret-volume
                 secret:
-                secretName: dotfile-secret
+                  secretName: dotfile-secret
             ```
 
         * Within the container
@@ -135,8 +135,8 @@
             ```yaml
                 volumeMounts:
                 - name: secret-volume
-                readOnly: true
-                mountPath: "/etc/secret-volume"
+                  readOnly: true
+                  mountPath: "/etc/secret-volume"
             ```
 
     1. Ensure it is scheduled on the controlplane
