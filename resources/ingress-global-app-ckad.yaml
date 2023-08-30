@@ -1,0 +1,78 @@
+---
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: global-space
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webapp-food
+  namespace: global-space
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: webapp-food
+  template:
+    metadata:
+      labels:
+        app: webapp-food
+    spec:
+      containers:
+      - name: webapp-food
+        image: kodekloud/ecommerce:food
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: food-service
+  namespace: global-space
+spec:
+  selector:
+    app: webapp-food
+  ports:
+  - port: 8080
+    targetPort: 8080
+
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: default-backend
+  namespace: global-space
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: default-backend
+  template:
+    metadata:
+      labels:
+        app: default-backend
+    spec:
+      containers:
+      - name: simple-webapp
+        imagePullPolicy: Always
+        image: kodekloud/ecommerce:404
+        ports:
+        - containerPort: 8080
+
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: default-backend-service
+  namespace: global-space
+spec:
+  selector:
+    app: default-backend
+  ports:
+  - port: 80
+    targetPort: 8080
