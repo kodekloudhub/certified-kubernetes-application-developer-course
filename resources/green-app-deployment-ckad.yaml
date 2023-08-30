@@ -1,0 +1,114 @@
+---
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: green-space
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-wear
+  namespace: green-space
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app-wear
+  template:
+    metadata:
+      labels:
+        app: app-wear
+    spec:
+      containers:
+      - name: simple-app-webapp
+        image: kodekloud/ecommerce:apparels
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: app-wear-service
+  namespace: green-space
+spec:
+  selector:
+    app: app-wear
+  ports:
+  - port: 8080
+    targetPort: 8080
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-video
+  namespace: green-space
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app-video
+  template:
+    metadata:
+      labels:
+        app: app-video
+    spec:
+      containers:
+      - name: simple-app-webapp
+        image: kodekloud/ecommerce:video
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: app-video-service
+  namespace: green-space
+spec:
+  selector:
+    app: app-video
+  ports:
+  - port: 8080
+    targetPort: 8080
+
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: default-backend
+  namespace: green-space
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: default-backend
+  template:
+    metadata:
+      labels:
+        app: default-backend
+    spec:
+      containers:
+      - name: simple-webapp
+        imagePullPolicy: Always
+        image: kodekloud/ecommerce:404
+        ports:
+        - containerPort: 8080
+
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: default-backend-service
+  namespace: green-space
+spec:
+  selector:
+    app: default-backend
+  ports:
+  - port: 80
+    targetPort: 8080
