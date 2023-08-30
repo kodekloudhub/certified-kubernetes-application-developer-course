@@ -1,0 +1,28 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-resource-uxz
+  namespace: green-space
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+spec:
+  ingressClassName: nginx
+  rules:
+  - http:
+      paths:
+      - path: /app1
+        pathType: Prefix
+        backend:
+          service:
+           name: app-wear-service
+           port: 
+            number: 8080
+      - path: /app2
+        pathType: Prefix
+        backend:
+          service:
+           name: app-video-service
+           port:
+            number: 8080
