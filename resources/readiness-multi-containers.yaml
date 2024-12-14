@@ -1,0 +1,21 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: readiness-multi-containers
+  namespace: ckad-multi-containers
+spec:
+  containers:
+    - name: main-application
+      image: busybox:1.28
+      command:
+        - sh
+        - -c
+        - echo The app is running! && sleep 3600
+  initContainers:
+    - name: init-application
+      image: busybox:1.28
+      command:
+        - sh
+        - -c
+        - slept 10
